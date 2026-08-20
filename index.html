@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
 
@@ -13,40 +14,112 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
     <div class="container">
 
         <header>
-            <p class="small-title">LEARN ENGLISH</p>
 
-            <h1>English Word Analyzer</h1>
+            <p class="small-title">
+                LEARN ENGLISH
+            </p>
+
+            <h1>
+                English Word Analyzer
+            </h1>
 
             <p class="subtitle">
-                Phân tích từ loại và nghĩa của từ tiếng Anh
+                Tra từ và học từ vựng bằng Quiz
             </p>
+
         </header>
 
 
-        <div class="search-box">
+        <!-- SEARCH -->
 
-            <input
-                id="wordInput"
-                type="text"
-                placeholder="Nhập từ tiếng Anh..."
-            >
+        <section class="search-section">
 
-            <button onclick="analyzeWord()">
-                Phân tích
-            </button>
+            <div class="search-box">
 
-        </div>
+                <input
+                    id="wordInput"
+                    type="text"
+                    placeholder="Nhập từ tiếng Anh..."
+                >
+
+                <button onclick="analyzeWord()">
+                    🔎 Phân tích
+                </button>
+
+            </div>
+
+        </section>
 
 
         <p id="status"></p>
 
 
+        <!-- RESULT -->
+
         <div id="result"></div>
+
+
+        <!-- HISTORY -->
+
+        <section class="history-section">
+
+            <div class="section-title">
+
+                <h2>
+                    🕘 Từ đã tra
+                </h2>
+
+                <button
+                    class="quiz-button"
+                    onclick="startQuiz()"
+                >
+                    🎮 Quiz
+                </button>
+
+            </div>
+
+
+            <div id="history"></div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+
+        <section
+            id="quizSection"
+            class="quiz-section hidden"
+        >
+
+            <div class="quiz-header">
+
+                <h2>
+                    🎮 English Quiz
+                </h2>
+
+                <p id="quizProgress"></p>
+
+            </div>
+
+
+            <div id="quizContent"></div>
+
+
+            <button
+                id="nextButton"
+                class="next-button hidden"
+                onclick="nextQuestion()"
+            >
+                Câu tiếp theo →
+            </button>
+
+        </section>
 
     </div>
 
@@ -54,4 +127,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
